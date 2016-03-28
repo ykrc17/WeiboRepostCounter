@@ -18,7 +18,7 @@ class Spider:
         f.write('时间,转发,评论,赞\n')
 
         for page_index in range(self.start, self.end):
-            print(str.format('progress: {:.2}% page: {}', (page_index - self.start) / self.end * 100, page_index))
+            print("progress: %.2f%% page: %d" % ((page_index - self.start) / self.end * 100, page_index))
 
             page = self.send_request_to_weibo(self.base_url + str(page_index))
             post_list = get_post_list(page)
